@@ -1,7 +1,9 @@
 import { Album } from 'src/album/album.model';
 import { Artist } from 'src/artist/artist.model';
+import { Favs } from 'src/favs/favs.model';
 import { Track } from 'src/track/track.model';
 import { User } from 'src/user/user.model';
+
 export const users: User[] = [
   {
     id: '8ab2d882-13f2-4e6a-a505-ebf6f5a283c7',
@@ -28,6 +30,7 @@ export const users: User[] = [
     updatedAt: Date.now(),
   },
 ];
+
 export const artists: Artist[] = [
   {
     id: '8ab2d882-13f2-4e6a-a505-ebf6f5a283c7',
@@ -45,6 +48,7 @@ export const artists: Artist[] = [
     grammy: false,
   },
 ];
+
 export const albums: Album[] = [
   {
     id: '9fcffb19-b0e7-4eaf-ab5c-62c6adb7f3f0',
@@ -71,6 +75,7 @@ export const albums: Album[] = [
     artistId: '8ab2d882-13f2-4e6a-a505-ebf6f5a283c7',
   },
 ];
+
 export const tracks: Track[] = [
   {
     id: 'b7b63b28-861d-4d63-8545-f963c37e7338',
@@ -101,3 +106,21 @@ export const tracks: Track[] = [
     duration: 264,
   },
 ];
+
+export const userDb = new Map<string, User>(
+  users.map((user) => [user.id, user]),
+);
+
+export const artistDb = new Map<string, Artist>(
+  artists.map((artist) => [artist.id, artist]),
+);
+
+export const albumDb = new Map<string, Album>(
+  albums.map((album) => [album.id, album]),
+);
+
+export const trackDb = new Map<string, Track>(
+  tracks.map((track) => [track.id, track]),
+);
+
+export const favoriteDb: Favs = new Favs();
